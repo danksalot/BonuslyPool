@@ -25,10 +25,8 @@ with open('users.csv') as users_file:
 
 for participant in participants:
 	recipients = [x for x in participants if x[USERNAME] != participant[USERNAME]]
-	# recipients = [['hendra.wong','hendra.wong@checkr.com','1111',0],['jacob.martin','jacob.martin@checkr.com','2222',0],['andrea.swanson','andrea.swanson@checkr.com','3333',0]]
 	if len(recipients) > 0:
 		amount = math.floor(participant[BALANCE]/len(recipients))
-		# amount = 1
 		for recipient in recipients:			
 			tmpHeaders = { 'Authorization' : 'Bearer ' + participant[TOKEN] }
 			tmpData = { 
